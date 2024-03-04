@@ -11,13 +11,11 @@ import userRoutes from "./routes/user";
 const app = express();
 
 app.use(bodyparser.json());
-app.use(cors(
-  {
-    origin:[],
-    methods:["POST","GET","DELETE","PUT"],
-    credentials:true
-  }
-));
+app.use(cors({
+  origin: 'http://localhost:8080',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
 app.use("/auth", authRoutes);
 app.use("/task", taskRoutes);
