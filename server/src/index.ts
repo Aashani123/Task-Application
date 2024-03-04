@@ -12,7 +12,7 @@ const app = express();
 
 app.use(bodyparser.json());
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: 'https://ariso-task-manager.web.app',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
